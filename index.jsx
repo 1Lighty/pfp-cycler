@@ -34,6 +34,7 @@ module.exports = class ProfilePictureCycler extends Plugin {
           this.setInterval(val);
           this.log(`Setting interval to ${val} hour(s)`);
         }}
+        folderPath={PFP_FOLDER}
       />
     });
   }
