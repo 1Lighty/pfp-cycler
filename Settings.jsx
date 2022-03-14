@@ -17,7 +17,7 @@ module.exports = class Settings extends React.PureComponent {
 
     return (
       <div>
-        <SliderInput title='Profile picture interval' value={getSetting('interval')} onValueChange={val => {
+        <SliderInput title='Profile picture interval' initialValue={getSetting('interval', 1)} onValueChange={val => {
           const ol = getSetting('interval', 1);
           if (ol === val) return;
           updateSetting('interval', val);
