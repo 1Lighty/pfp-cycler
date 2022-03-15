@@ -5,6 +5,7 @@ const { inject, uninject } = require('powercord/injector');
 const { existsSync, writeFileSync } = require('fs');
 const { join } = require('path');
 const FormItem = AsyncComponent.from(getModuleByDisplayName('FormItem'));
+const { shell } = require('electron');
 
 module.exports = class Settings extends React.PureComponent {
   componentWillUnmount() {
@@ -49,6 +50,9 @@ module.exports = class Settings extends React.PureComponent {
             }, true);
             OpenSelectImageModal.handleOpenSelectImageModal(0, 'pfp-cycler');
           }} >Add new profile picture</Button>
+        </FormItem>
+        <FormItem>
+          <Button onClick={() => shell.showItemInFolder(this.props.folderPath)}>Open icons folder</Button>
         </FormItem>
       </div>);
   }
